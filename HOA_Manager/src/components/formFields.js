@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 export class FormInput extends Component {
     render() {
-        const { className, title, input, type, placeholder, editValue} = this.props;
+        const { className, title, input, type, placeholder, editValue } = this.props;
         return (
             <div className={`${className} form-input`}>
                 <label className='form-input__title'>{title}</label>
@@ -20,7 +20,7 @@ export class FormInput extends Component {
 
 export class FormTextArea extends Component {
     render() {
-        const { className, title, input, type, placeholder, editValue} = this.props;
+        const { className, title, input, type, placeholder, editValue } = this.props;
         return (
             <div className={`${className} form-textarea`}>
                 <label className='form-textarea__title'>{title}</label>
@@ -40,10 +40,10 @@ export class FormTextArea extends Component {
 
 export class FormButton extends Component {
     render() {
-        const { className, title, input, type, small, danger, onClick} = this.props;
+        const { className, title, input, type, small, danger, onClick } = this.props;
         return (
             <div className={`${className} ${small ? 'form-button-small' : 'form-button'}`}>
-            <button 
+                <button 
                     className={`
                         ${small ? 'form-button-small' : 'form-button'}__button 
                         ${danger ? 'form-button-small__danger' : ''}   
@@ -51,23 +51,23 @@ export class FormButton extends Component {
                     type={type}
                     {...input}
                     onClick={onClick}
-            >
-            {title}
-            </button>
+                >
+                {title}
+                </button>
             </div>
         );
     }
 }
 
 export class FormImage extends Component {
-    
-    handleSelectedImage = (event) =>{
+
+    handleSelectedImage = (event) => {
         var image = document.getElementById('newsletter-new-image');
         image.src = window.URL.createObjectURL(event.target.files[0]);
     }
-    
+
     render() {
-        const { className, title, input, imageUrl} = this.props;
+        const { className, title, input, imageUrl } = this.props;
         return (
             <div className={`${className} form-image`}>
                 <label className='form-image__title'>{title}</label>
